@@ -68,7 +68,8 @@ extension Color {
     }
 
     var uiColor: String {
-        return "UIColor(red: \(Float(r)), green: \(Float(g)), blue: \(Float(b)), alpha: \(Float(a)))"
+        return "UIColor(cgColor: CGColor(colorSpace: CGColorSpace(name: CGColorSpace.extendedSRGB) ?? CGColorSpace(iccData: CGColorSpace.adobeRGB1998), components: [\(Float(r)), \(Float(g)), \(Float(b)), \(Float(a))]) ?? UIColor.red.cgColor)"
+//        return "UIColor(red: \(Float(r)), green: \(Float(g)), blue: \(Float(b)), alpha: \(Float(a)))"
     }
 }
 
